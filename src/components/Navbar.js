@@ -23,9 +23,9 @@ export default function Navbar(props) {
             {props.serviceText}
             </a>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a className="dropdown-item" href="/">Link 1</a></li>
-              <li><a className="dropdown-item" href="/">Link 2</a></li>
-              <li><a className="dropdown-item" href="/">Link 3</a></li>
+              <li><a className="dropdown-item" href="/">Bold Text Generator</a></li>
+              <li><a className="dropdown-item" href="/">Italic Text Generator</a></li>
+              <li><a className="dropdown-item" href="/">Underline Text Generator</a></li>
             </ul>
           </li>
           <li className="nav-item">
