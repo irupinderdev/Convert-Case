@@ -20,13 +20,13 @@ export default function Textform(props) {
     console.log("On Change");
     setText(event.target.value);
   }
-  const [text, setText] = useState('Enter text here');
+  const [text, setText] = useState('');
   // text="new text"; // wrong way
   // setText="new text"; // right way to change the state
   return (
    <>
     <div className="container my-3">
-        <h1>{props.heading}</h1>
+        <h2>{props.heading}</h2>
         <div className="mb-3">
            {/* <label for="mybox" className="form-label">Write Your Text</label> */}
             <textarea className="form-control" value={text} onChange={handleOnChange} id="mybox" rows="8" placeholder='Simply enter your text and choose the case you want to convert it to.'></textarea>
@@ -36,6 +36,17 @@ export default function Textform(props) {
         {/* <button className="btn btn-dark my-2" onClick={handleCcClick}>convert to Sentence Case</button> */}
         
       </div>
+      <div className="container my-3 bg-dark text-light py-4">
+        <h2>Your Text Summary</h2>   {/* // counting words and characters */}
+        <h5 className='text-warning'>{text.split(" ").length} word and {text.length} characters</h5> 
+        <p>{0.008 * text.split(" ").length} Minutes to read</p>
+        </div>
+        <div className="container my-4 bg-dark text-light py-4">
+        <h2>Preview</h2>
+        <p>{text}</p>
+        </div>
+
+      
    </>
   )
 }
