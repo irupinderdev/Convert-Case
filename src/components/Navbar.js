@@ -29,7 +29,7 @@ export default function Navbar(props) {
             </ul>
           </li>
           <li className="nav-item">
-            <a className="nav-link">Contact</a>
+            <a className="nav-link" href="/">Contact</a>
           </li>
         </ul>
         <form className="d-flex">
