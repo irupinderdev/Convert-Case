@@ -11,11 +11,11 @@ export default function Textform(props) {
     let newText = text.toLowerCase();
     setText(newText)
   }
-  const handleScClick = ()=>{
-    console.log("Sentencecase was clicked" + text);
-    let newText = text.toLowerCase();
-    setText(newText)
-  }
+  // const handleScClick = ()=>{
+  //   console.log("Sentencecase was clicked" + text);
+  //   let newText = text.toLowerCase();
+  //   setText(newText)
+  // }
   const handleOnChange = (event)=>{
     console.log("On Change");
     setText(event.target.value);

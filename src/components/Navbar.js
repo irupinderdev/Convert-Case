@@ -19,7 +19,7 @@ export default function Navbar(props) {
             <a className="nav-link" href="/">{props.aboutText}</a>
           </li>
           <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {props.serviceText}
             </a>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
