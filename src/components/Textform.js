@@ -11,6 +11,11 @@ export default function Textform(props) {
     let newText = text.toLowerCase();
     setText(newText)
   }
+  const handleClearClick = ()=>{
+    console.log("Clear was clicked" - text);
+    let newText = '';
+    setText(newText)
+  }
   // const handleScClick = ()=>{
   //   console.log("Sentencecase was clicked" + text);
   //   let newText = text.toLowerCase();
@@ -33,7 +38,7 @@ export default function Textform(props) {
         </div>
         <button className="btn btn-dark" onClick={handleUpClick}>Convert to Uppercase</button>
         <button className="btn btn-warning mx-2 my-2" onClick={handleLwClick}>convert to lowercase</button>
-        {/* <button className="btn btn-dark my-2" onClick={handleCcClick}>convert to Sentence Case</button> */}
+        <button className="btn btn-dark my-2" onClick={handleClearClick}>Clear</button>
         
       </div>
       <div className="container my-3 bg-dark text-light py-4">
