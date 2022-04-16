@@ -15,17 +15,20 @@ export default function Textform(props) {
   // Capitalize
   const handleTcClick = ()=>{
   let words = text.split(" ")
-   let uppercaseword = ' '
+   let uppercaseword = ''
     words.forEach(element => {
-       uppercaseword += element.charAt(0).toUpperCase() + element.slice(1) + " "
+    uppercaseword += element.charAt(0).toUpperCase() + element.slice(1) + " "
     });
     setText(uppercaseword)
 }
-// Sentence Case
+
+
+// Sentence Case not working properly
 const handleScClick = ()=>{
   console.log("Sentencecase was clicked" + text);
-  let newText = text.charAt(0).toUppercase( )+ text.slice(1);
-  setText(newText)
+let newText = text.charAt(0).toUpperCase() + text.slice(1);
+setText(newText)
+
 }
 
 //  Reverse
