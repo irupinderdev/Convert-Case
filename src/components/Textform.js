@@ -57,11 +57,10 @@ function handleSliceClick(event) {
     }
 
  // Function to remove duplicate words from the string
-const onRemoveDuplicatesClick = (e) => {
+const onRemoveDuplicatesClick = () => {
   let newText = text.split(' ').filter(function(item,i,allItems){
       return i === allItems.indexOf(item);
   }).join(' ');
-
   setText(newText)
 }
 
@@ -124,13 +123,13 @@ const handleExtraSpaces = ()=>{
         <button className="btn btn-dark mx-2 my-2" onClick={handleLwClick}>lowercase</button>
         <button className="btn btn-dark my-2" onClick={handleCcClick}>Capitalize</button>
         <button className="btn btn-dark my-2 mx-2" onClick={handleScClick}>Sentence case</button>
-        <button className="btn btn-dark my-2 mx-2" onClick={handleReverse}>Reverse</button> 
+        <button className="btn btn-dark my-2" onClick={handleReverse}>Reverse</button> 
         <button className="btn btn-dark mx-2" onClick={handleSliceClick}>Convert to 100 letters</button>       
-        <button className="btn btn-warning my-2 mx-2" onClick={rmvSpecailCharacters}>Remove Specail Characters</button> 
+        <button className="btn btn-dark my-2" onClick={rmvSpecailCharacters}>Remove Specail Characters</button> 
         <button className="btn btn-dark my-2 mx-2" onClick={handleExtraSpaces }>Remove Extra Spaces</button> 
-        <button className="btn btn-warning my-2 mx-2" onClick={onRemoveDuplicatesClick }> Remove Duplicate Words </button> 
+        <button className="btn btn-dark my-2" onClick={onRemoveDuplicatesClick }> Remove Duplicate Words </button> 
         <button className="btn btn-warning my-2 mx-2" onClick={copyIt}>Copy to Clipboard</button> 
-        <button className="btn btn-warning my-2" type="submit" onClick={speak}>Speak</button>
+       
         <button className="btn btn-warning my-2 mx-2" onClick={handleClearClick}>Clear</button>
   
         
