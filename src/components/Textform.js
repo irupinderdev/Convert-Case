@@ -43,7 +43,7 @@ setText(newText)
 const handleInverseClick = ()=>{
   let newText =''
   for (const letter of text) {
-      if (letter == letter.toLowerCase()) {
+      if (letter === letter.toLowerCase()) {
           newText = newText+(letter.toUpperCase());
       } else {
           newText = newText+(letter.toLowerCase());
@@ -98,7 +98,7 @@ const handleExtraSpaces = ()=>{
   
 };
 
-// Speak
+// Pronounce
   const speak = () => {
     let msg = new SpeechSynthesisUtterance();
     msg.text = text;
