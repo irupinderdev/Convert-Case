@@ -33,12 +33,23 @@ const handleCcClick = () =>{
 
 
 // Sentence Case not working properly
-const handleScClick = ()=>{
-  console.log("Sentencecase was clicked" + text);
-let newText = text.charAt(0).toUpperCase() + text.slice(1);
-setText(newText)
+// const handleScClick = ()=>{
+//   console.log("Sentencecase was clicked" + text);
+// let newText = text.charAt(0).toUpperCase() + text.slice(1);
+// setText(newText)
 
-}
+// }
+// This working but not proper
+const handleScClick = () => {
+  const arr = text.split(". ");
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+  }
+  const newText = arr.join(". ");
+  setText(newText);
+
+};
+
 // iNvErSe cAsE
 const handleInverseClick = ()=>{
   let newText =''
