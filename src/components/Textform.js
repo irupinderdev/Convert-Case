@@ -79,9 +79,10 @@ const handleExtraSpaces = ()=>{
    // Copy to Clipboard
    const copyIt=(event)=>{
     setText(event.target.value);
-    let newtext=navigator.clipboard.writeText(text);
+    let newText = navigator.clipboard.writeText(text);
     console.log("CopyIt was clicked");
     alert("Text Copied Successfully");
+    setText(newText)
   
 };
 
@@ -129,7 +130,7 @@ const handleExtraSpaces = ()=>{
         <button className="btn btn-dark my-2 mx-2" onClick={handleExtraSpaces }>Remove Extra Spaces</button> 
         <button className="btn btn-dark my-2" onClick={onRemoveDuplicatesClick }> Remove Duplicate Words </button> 
         <button className="btn btn-warning my-2 mx-2" onClick={copyIt}>Copy to Clipboard</button> 
-       
+        <button className="btn btn-warning my-2" type="submit" onClick={speak}>Speak</button>
         <button className="btn btn-warning my-2 mx-2" onClick={handleClearClick}>Clear</button>
   
         
