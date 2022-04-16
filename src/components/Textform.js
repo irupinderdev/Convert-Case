@@ -39,6 +39,18 @@ let newText = text.charAt(0).toUpperCase() + text.slice(1);
 setText(newText)
 
 }
+// iNvErSe cAsE
+const handleInverseClick = ()=>{
+  let newText =''
+  for (const letter of text) {
+      if (letter == letter.toLowerCase()) {
+          newText = newText+(letter.toUpperCase());
+      } else {
+          newText = newText+(letter.toLowerCase());
+      }
+  }  setText(newText);
+}
+
 
 //  Reverse
 const handleReverse = (event) => {
@@ -125,12 +137,13 @@ const handleExtraSpaces = ()=>{
         <button className="btn btn-dark my-2" onClick={handleCcClick}>Capitalize</button>
         <button className="btn btn-dark my-2 mx-2" onClick={handleScClick}>Sentence case</button>
         <button className="btn btn-dark my-2" onClick={handleReverse}>Reverse</button> 
-        <button className="btn btn-dark mx-2" onClick={handleSliceClick}>Convert to 100 letters</button>       
-        <button className="btn btn-dark my-2" onClick={rmvSpecailCharacters}>Remove Specail Characters</button> 
-        <button className="btn btn-dark my-2 mx-2" onClick={handleExtraSpaces }>Remove Extra Spaces</button> 
+        <button className="btn btn-dark my-2 mx-2" onClick={handleInverseClick}>iNVERSE</button>         
+        <button className="btn btn-dark" onClick={handleSliceClick}>Convert to 100 letters</button>       
+        <button className="btn btn-dark my-2 mx-2" onClick={rmvSpecailCharacters}>Remove Specail Characters</button> 
+        <button className="btn btn-dark my-2" onClick={handleExtraSpaces }>Remove Extra Spaces</button> 
         <button className="btn btn-dark my-2" onClick={onRemoveDuplicatesClick }> Remove Duplicate Words </button> 
         <button className="btn btn-warning my-2 mx-2" onClick={copyIt}>Copy to Clipboard</button> 
-        <button className="btn btn-warning my-2" type="submit" onClick={speak}>Speak</button>
+        <button className="btn btn-warning my-2" type="submit" onClick={speak}>Pronounce</button>
         <button className="btn btn-warning my-2 mx-2" onClick={handleClearClick}>Clear</button>
   
         
@@ -142,6 +155,7 @@ const handleExtraSpaces = ()=>{
          <p>{text.split(" ").length-1} - Space Counter </p>
         <p>Sentence count: {text.split(/[.?!]\s/).length}</p>
         <p> Paragraph count: {text.split(/\r\n|\r|\n/).length}</p>
+        <p>Characters per word(Average): {text.replace(/ /g,"").length/text.split(" ").length}</p>
         </div>
         <div className="container my-4 bg-dark text-light py-4">
         <h2>Preview</h2>
