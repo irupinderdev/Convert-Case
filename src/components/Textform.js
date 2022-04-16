@@ -13,13 +13,22 @@ export default function Textform(props) {
   }
 
   // Capitalize
-  const handleTcClick = ()=>{
-  let words = text.split(" ")
-   let uppercaseword = ''
-    words.forEach(element => {
-    uppercaseword += element.charAt(0).toUpperCase() + element.slice(1) + " "
-    });
-    setText(uppercaseword)
+//   const handleCcClick = ()=>{
+//   let words = text.split(" ")
+//    let uppercaseword = ''
+//     words.forEach(element => {
+//     uppercaseword += element.charAt(0).toUpperCase() + element.slice(1) + " "
+//     });
+//     setText(uppercaseword)
+// }
+  // Capitalize WEll Working code
+const handleCcClick = () =>{
+  function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  }
+  const upper = text.split(' ').map(capitalize).join(' ');
+  setText(upper)
+
 }
 
 
@@ -46,18 +55,34 @@ function handleSliceClick(event) {
         let newText = text.slice(0, 100);
         setText(newText);
     }
+
+ // Function to remove duplicate words from the string
+const onRemoveDuplicatesClick = (e) => {
+  let newText = text.split(' ').filter(function(item,i,allItems){
+      return i === allItems.indexOf(item);
+  }).join(' ');
+
+  setText(newText)
+}
+
 // Remove Speacial Characters
 const rmvSpecailCharacters = () => {
   let newText = text.replace(/[^a-zA-Z ]/g, "");
   setText(newText);
 }
 
+//  Remove Extra spaces - *
+const handleExtraSpaces = ()=>{
+ let newText = text.replace(/\s+/g, ' ').trim();
+  setText(newText)
+  }
+
    // Copy to Clipboard
    const copyIt=(event)=>{
     setText(event.target.value);
     let newtext=navigator.clipboard.writeText(text);
-    console.log(newtext);
-    alert("text copied successfully");
+    console.log("CopyIt was clicked");
+    alert("Text Copied Successfully");
   
 };
 
@@ -77,6 +102,9 @@ const rmvSpecailCharacters = () => {
     setText(newText)
   }
 
+  // Light and dark theme 
+
+
   const handleOnChange = (event)=>{
     console.log("On Change");
     setText(event.target.value);
@@ -94,14 +122,17 @@ const rmvSpecailCharacters = () => {
         </div>
         <button className="btn btn-dark" onClick={handleUpClick}>UPPERCASE</button>
         <button className="btn btn-dark mx-2 my-2" onClick={handleLwClick}>lowercase</button>
-        <button className="btn btn-dark my-2" onClick={handleTcClick}>Capitalize</button>
+        <button className="btn btn-dark my-2" onClick={handleCcClick}>Capitalize</button>
         <button className="btn btn-dark my-2 mx-2" onClick={handleScClick}>Sentence case</button>
         <button className="btn btn-dark my-2 mx-2" onClick={handleReverse}>Reverse</button> 
         <button className="btn btn-dark mx-2" onClick={handleSliceClick}>Convert to 100 letters</button>       
         <button className="btn btn-warning my-2 mx-2" onClick={rmvSpecailCharacters}>Remove Specail Characters</button> 
+        <button className="btn btn-dark my-2 mx-2" onClick={handleExtraSpaces }>Remove Extra Spaces</button> 
+        <button className="btn btn-warning my-2 mx-2" onClick={onRemoveDuplicatesClick }> Remove Duplicate Words </button> 
         <button className="btn btn-warning my-2 mx-2" onClick={copyIt}>Copy to Clipboard</button> 
         <button className="btn btn-warning my-2" type="submit" onClick={speak}>Speak</button>
         <button className="btn btn-warning my-2 mx-2" onClick={handleClearClick}>Clear</button>
+  
         
       </div>
       <div className="container my-3 bg-dark text-light py-4">
@@ -109,6 +140,8 @@ const rmvSpecailCharacters = () => {
         <h5 className='text-warning'>{text.split(" ").length} word and {text.length} characters</h5> 
         <p>{0.008 * text.split(" ").length} Minutes to read</p>
          <p>{text.split(" ").length-1} - Space Counter </p>
+        <p>Sentence count: {text.split(/[.?!]\s/).length}</p>
+        <p> Paragraph count: {text.split(/\r\n|\r|\n/).length}</p>
         </div>
         <div className="container my-4 bg-dark text-light py-4">
         <h2>Preview</h2>
