@@ -111,7 +111,13 @@ const handleExtraSpaces = ()=>{
     window.speechSynthesis.speak(msg);
   }
   // Download Text
-
+  const download=(filename, text)=>{
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+    element.style.display = 'none'; document.body.appendChild(element);
+    element.click(); document.body.removeChild(element);
+  }
   
   // Clear
   const handleClearClick = ()=>{
@@ -150,22 +156,28 @@ const handleExtraSpaces = ()=>{
         <button className="btn btn-outline-dark " onClick={handleExtraSpaces }>Remove Extra Spaces</button> 
         <button className="btn btn-outline-dark " onClick={onRemoveDuplicatesClick }> Remove Duplicate Words </button> 
         <button className="btn btn-dark" onClick={copyIt}>Copy to Clipboard</button> 
+        <button className="btn btn-dark" onClick={download}>Download txt</button> 
         <button className="btn btn-warning" type="submit" onClick={speak}>Pronounce</button>
         <button className="btn btn-dark " onClick={handleClearClick}><i class="fa-solid fa-trash-can"></i></button>
         
       </div>
       <div className="container my-3 bg-light py-4">
         <h2>Your Text Summary</h2>   {/* // counting words and characters */}
-        <strong><h3 className='text-warning'>{text.split(" ").length} word and {text.length} characters</h3> </strong>
-        <p>{0.008 * text.split(" ").length} Minutes to read</p>
-         <p>{text.split(" ").length-1} - Space Counter </p>
-        <p>Sentence count: {text.split(/[.?!]\s/).length}</p>
-        <p> Paragraph count: {text.split(/\r\n|\r|\n/).length}</p>
-        <p>Characters per word(Average): {text.replace(/ /g,"").length/text.split(" ").length}</p>
+        <table className="rtable"> 
+          <tr>
+            <td><strong>Words :</strong> {text.split(" ").length} </td>  {/*  {text.split('\n').join('').split(/[ ]+/).length} */}
+             <td> <strong>Characters : {text.length} </strong>{}  </td>    {/*  {text.split('\n').join('').split(/[ ]+/).join('').length} */}
+             <td> {text.split(" ").length-1} - Space Counter </td>
+             <td> Paragraphs: {text.split(/\r\n|\r|\n/).length}</td>
+             <td>{0.008 * text.split(" ").length} Minutes to read</td>
+             <td>Sentence count: {text.split(/[.?!]\s/).length}</td>
+             <td>Characters per word(Average): {text.replace(/ /g,"").length/text.split(" ").length}</td>
+          </tr>
+        </table>
         </div>
-        <div className="container my-4 bg-secondary text-light py-4">
+        <div className="container my-4 bg-light py-4">
         <h2>Preview</h2>
-        <p>{text}</p>
+        <p>{text.length>0?text:"Enter Something in Textarea above to Preview"}</p>
         </div>
 
       
