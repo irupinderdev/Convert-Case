@@ -142,15 +142,15 @@ const handleExtraSpaces = ()=>{
         <button className="btn btn-outline-dark" onClick={handleUpClick}>UPPERCASE</button>
         <button className="btn btn-outline-dark" onClick={handleLwClick}>lowercase</button>
         <button className="btn btn-outline-dark " onClick={handleCcClick}>Capitalize</button>
-        <button className="btn btn-outline-dark  mx-2" onClick={handleScClick}>Sentence case</button>
+        <button className="btn btn-outline-dark" onClick={handleScClick}>Sentence case</button>
         <button className="btn btn-outline-dark " onClick={handleReverse}>Reverse</button> 
-        <button className="btn btn-outline-dark  mx-2" onClick={handleInverseClick}>iNVERSE</button>         
+        <button className="btn btn-outline-dark" onClick={handleInverseClick}>iNVERSE</button>         
         <button className="btn btn-outline-dark" onClick={handleSliceClick}>Convert to 100 letters</button>       
-        <button className="btn btn-outline-dark  mx-2" onClick={rmvSpecailCharacters}>Remove Special Characters</button> 
+        <button className="btn btn-outline-dark" onClick={rmvSpecailCharacters}>Remove Special Characters</button> 
         <button className="btn btn-outline-dark " onClick={handleExtraSpaces }>Remove Extra Spaces</button> 
         <button className="btn btn-outline-dark " onClick={onRemoveDuplicatesClick }> Remove Duplicate Words </button> 
-        <button className="btn btn-dark  mx-2" onClick={copyIt}>Copy to Clipboard</button> 
-        <button className="btn btn-warning  mx-2" type="submit" onClick={speak}>Pronounce</button>
+        <button className="btn btn-dark" onClick={copyIt}>Copy to Clipboard</button> 
+        <button className="btn btn-warning" type="submit" onClick={speak}>Pronounce</button>
         <button className="btn btn-dark " onClick={handleClearClick}><i class="fa-solid fa-trash-can"></i></button>
         
       </div>
