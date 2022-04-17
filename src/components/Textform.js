@@ -32,13 +32,8 @@ const handleCcClick = () =>{
 }
 
 
-// Sentence Case not working properly
-// const handleScClick = ()=>{
-//   console.log("Sentencecase was clicked" + text);
-// let newText = text.charAt(0).toUpperCase() + text.slice(1);
-// setText(newText)
+// Sentence Case 
 
-// }
 // This working but not proper
 const handleScClick = () => {
   const arr = text.split(". ");
@@ -127,11 +122,12 @@ const handleExtraSpaces = ()=>{
 
   // Light and dark theme 
 
-
+// Handle On change console
   const handleOnChange = (event)=>{
     console.log("On Change");
     setText(event.target.value);
   }
+
   const [text, setText] = useState('');
   // text="new text"; // wrong way
   // setText="new text"; // right way to change the state
@@ -143,32 +139,31 @@ const handleExtraSpaces = ()=>{
            {/* <label for="mybox" className="form-label">Write Your Text</label> */}
             <textarea className="form-control" value={text} onChange={handleOnChange} id="mybox" rows="8" placeholder='Simply enter your text and choose the case you want to convert it to.'></textarea>
         </div>
-        <button className="btn btn-dark" onClick={handleUpClick}>UPPERCASE</button>
-        <button className="btn btn-dark mx-2 my-2" onClick={handleLwClick}>lowercase</button>
-        <button className="btn btn-dark my-2" onClick={handleCcClick}>Capitalize</button>
-        <button className="btn btn-dark my-2 mx-2" onClick={handleScClick}>Sentence case</button>
-        <button className="btn btn-dark my-2" onClick={handleReverse}>Reverse</button> 
-        <button className="btn btn-dark my-2 mx-2" onClick={handleInverseClick}>iNVERSE</button>         
-        <button className="btn btn-dark" onClick={handleSliceClick}>Convert to 100 letters</button>       
-        <button className="btn btn-dark my-2 mx-2" onClick={rmvSpecailCharacters}>Remove Specail Characters</button> 
-        <button className="btn btn-dark my-2" onClick={handleExtraSpaces }>Remove Extra Spaces</button> 
-        <button className="btn btn-dark my-2" onClick={onRemoveDuplicatesClick }> Remove Duplicate Words </button> 
-        <button className="btn btn-warning my-2 mx-2" onClick={copyIt}>Copy to Clipboard</button> 
-        <button className="btn btn-warning my-2" type="submit" onClick={speak}>Pronounce</button>
-        <button className="btn btn-warning my-2 mx-2" onClick={handleClearClick}>Clear</button>
-  
+        <button className="btn btn-outline-dark" onClick={handleUpClick}>UPPERCASE</button>
+        <button className="btn btn-outline-dark mx-2 my-2" onClick={handleLwClick}>lowercase</button>
+        <button className="btn btn-outline-dark my-2" onClick={handleCcClick}>Capitalize</button>
+        <button className="btn btn-outline-dark my-2 mx-2" onClick={handleScClick}>Sentence case</button>
+        <button className="btn btn-outline-dark my-2" onClick={handleReverse}>Reverse</button> 
+        <button className="btn btn-outline-dark my-2 mx-2" onClick={handleInverseClick}>iNVERSE</button>         
+        <button className="btn btn-outline-dark" onClick={handleSliceClick}>Convert to 100 letters</button>       
+        <button className="btn btn-outline-dark my-2 mx-2" onClick={rmvSpecailCharacters}>Remove Special Characters</button> 
+        <button className="btn btn-outline-dark my-2" onClick={handleExtraSpaces }>Remove Extra Spaces</button> 
+        <button className="btn btn-outline-dark my-2" onClick={onRemoveDuplicatesClick }> Remove Duplicate Words </button> 
+        <button className="btn btn-dark my-2 mx-2" onClick={copyIt}>Copy to Clipboard</button> 
+        <button className="btn btn-warning my-2 mx-2" type="submit" onClick={speak}>Pronounce</button>
+        <button className="btn btn-dark my-2" onClick={handleClearClick}><i class="fa-solid fa-trash-can"></i></button>
         
       </div>
-      <div className="container my-3 bg-dark text-light py-4">
+      <div className="container my-3 bg-light py-4">
         <h2>Your Text Summary</h2>   {/* // counting words and characters */}
-        <h5 className='text-warning'>{text.split(" ").length} word and {text.length} characters</h5> 
+        <strong><h3 className='text-warning'>{text.split(" ").length} word and {text.length} characters</h3> </strong>
         <p>{0.008 * text.split(" ").length} Minutes to read</p>
          <p>{text.split(" ").length-1} - Space Counter </p>
         <p>Sentence count: {text.split(/[.?!]\s/).length}</p>
         <p> Paragraph count: {text.split(/\r\n|\r|\n/).length}</p>
         <p>Characters per word(Average): {text.replace(/ /g,"").length/text.split(" ").length}</p>
         </div>
-        <div className="container my-4 bg-dark text-light py-4">
+        <div className="container my-4 bg-secondary text-light py-4">
         <h2>Preview</h2>
         <p>{text}</p>
         </div>

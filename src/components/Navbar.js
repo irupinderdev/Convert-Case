@@ -18,6 +18,15 @@ export default function Navbar(props) {
           <li className="nav-item">
             <a className="nav-link" href="/">{props.aboutText}</a>
           </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/">{props.replace}</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/">{props.beautify}</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/">{props.password}</a>
+          </li>
           <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {props.serviceText}
@@ -27,9 +36,6 @@ export default function Navbar(props) {
               <li><a className="dropdown-item" href="/">Italic Text Generator</a></li>
               <li><a className="dropdown-item" href="/">Underline Text Generator</a></li>
             </ul>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/">Contact</a>
           </li>
         </ul>
         {/* <form className="d-flex">
