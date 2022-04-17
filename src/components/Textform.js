@@ -140,18 +140,18 @@ const handleExtraSpaces = ()=>{
             <textarea className="form-control" value={text} onChange={handleOnChange} id="mybox" rows="8" placeholder='Simply enter your text and choose the case you want to convert it to.'></textarea>
         </div>
         <button className="btn btn-outline-dark" onClick={handleUpClick}>UPPERCASE</button>
-        <button className="btn btn-outline-dark mx-2 my-2" onClick={handleLwClick}>lowercase</button>
-        <button className="btn btn-outline-dark my-2" onClick={handleCcClick}>Capitalize</button>
-        <button className="btn btn-outline-dark my-2 mx-2" onClick={handleScClick}>Sentence case</button>
-        <button className="btn btn-outline-dark my-2" onClick={handleReverse}>Reverse</button> 
-        <button className="btn btn-outline-dark my-2 mx-2" onClick={handleInverseClick}>iNVERSE</button>         
+        <button className="btn btn-outline-dark" onClick={handleLwClick}>lowercase</button>
+        <button className="btn btn-outline-dark " onClick={handleCcClick}>Capitalize</button>
+        <button className="btn btn-outline-dark  mx-2" onClick={handleScClick}>Sentence case</button>
+        <button className="btn btn-outline-dark " onClick={handleReverse}>Reverse</button> 
+        <button className="btn btn-outline-dark  mx-2" onClick={handleInverseClick}>iNVERSE</button>         
         <button className="btn btn-outline-dark" onClick={handleSliceClick}>Convert to 100 letters</button>       
-        <button className="btn btn-outline-dark my-2 mx-2" onClick={rmvSpecailCharacters}>Remove Special Characters</button> 
-        <button className="btn btn-outline-dark my-2" onClick={handleExtraSpaces }>Remove Extra Spaces</button> 
-        <button className="btn btn-outline-dark my-2" onClick={onRemoveDuplicatesClick }> Remove Duplicate Words </button> 
-        <button className="btn btn-dark my-2 mx-2" onClick={copyIt}>Copy to Clipboard</button> 
-        <button className="btn btn-warning my-2 mx-2" type="submit" onClick={speak}>Pronounce</button>
-        <button className="btn btn-dark my-2" onClick={handleClearClick}><i class="fa-solid fa-trash-can"></i></button>
+        <button className="btn btn-outline-dark  mx-2" onClick={rmvSpecailCharacters}>Remove Special Characters</button> 
+        <button className="btn btn-outline-dark " onClick={handleExtraSpaces }>Remove Extra Spaces</button> 
+        <button className="btn btn-outline-dark " onClick={onRemoveDuplicatesClick }> Remove Duplicate Words </button> 
+        <button className="btn btn-dark  mx-2" onClick={copyIt}>Copy to Clipboard</button> 
+        <button className="btn btn-warning  mx-2" type="submit" onClick={speak}>Pronounce</button>
+        <button className="btn btn-dark " onClick={handleClearClick}><i class="fa-solid fa-trash-can"></i></button>
         
       </div>
       <div className="container my-3 bg-light py-4">
