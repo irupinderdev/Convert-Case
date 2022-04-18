@@ -34,7 +34,7 @@ const handleCcClick = () =>{
 
 // Sentence Case 
 
-// This working but not proper
+// This working but not proper e.g after uppercase or capitalized 
 const handleScClick = () => {
   const arr = text.split(". ");
   for (let i = 0; i < arr.length; i++) {
@@ -44,6 +44,7 @@ const handleScClick = () => {
   setText(newText);
 
 };
+
 
 // iNvErSe cAsE
 const handleInverseClick = ()=>{
@@ -95,14 +96,12 @@ const handleExtraSpaces = ()=>{
   }
 
    // Copy to Clipboard
-   const copyIt=(event)=>{
-    setText(event.target.value);
-    let newText = navigator.clipboard.writeText(text);
-    console.log("CopyIt was clicked");
-    alert("Text Copied Successfully");
-    setText(newText)
-  
-};
+const copyIt = async () => {
+  await navigator.clipboard.writeText(text);
+  alert('Text copied');
+}
+
+
 
 // Pronounce
   const speak = () => {
@@ -155,7 +154,7 @@ const handleExtraSpaces = ()=>{
         <button className="btn btn-outline-dark" onClick={rmvSpecailCharacters}>Remove Special Characters</button> 
         <button className="btn btn-outline-dark " onClick={handleExtraSpaces }>Remove Extra Spaces</button> 
         <button className="btn btn-outline-dark " onClick={onRemoveDuplicatesClick }> Remove Duplicate Words </button> 
-        <button className="btn btn-dark" onClick={copyIt}>Copy to Clipboard</button> 
+        <button className="btn btn-dark" onClick={copyIt}>Copy to Clipboard</button>         
         <button className="btn btn-dark" onClick={download}>Download txt</button> 
         <button className="btn btn-warning" type="submit" onClick={speak}>Pronounce</button>
         <button className="btn btn-dark " onClick={handleClearClick}><i class="fa-solid fa-trash-can"></i></button>
