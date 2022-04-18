@@ -2,6 +2,8 @@ import './App.css';
 // import About from './components/About';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
+import Wordcounter from './components/Wordcounter';
+
 
 function App () {
   //  const [mode, setMode] = useState('light'); // Whether Dark Mode is enabled or not
@@ -28,6 +30,7 @@ function App () {
      <Textform heading="Enter the text to analyze"/>
     {/* About Component */}
     {/* <About/> */}
+    <Wordcounter wcheading="Paste Your Text And Get Text Summary"/>
 </>
   )
 }

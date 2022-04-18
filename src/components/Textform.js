@@ -1,11 +1,13 @@
 import React, {useState} from 'react' 
 
 export default function Textform(props) {
+  // UPPERCASE
   const handleUpClick = ()=>{
     console.log("Upppercase was clicked" + text);
     let newText = text.toUpperCase();
     setText(newText)
   }
+  //lowercase
   const handleLwClick = ()=>{
     console.log("Lowercase was clicked" + text);
     let newText = text.toLowerCase();
@@ -13,14 +15,6 @@ export default function Textform(props) {
   }
 
   // Capitalize
-//   const handleCcClick = ()=>{
-//   let words = text.split(" ")
-//    let uppercaseword = ''
-//     words.forEach(element => {
-//     uppercaseword += element.charAt(0).toUpperCase() + element.slice(1) + " "
-//     });
-//     setText(uppercaseword)
-// }
   // Capitalize WEll Working code
 const handleCcClick = () =>{
   function capitalize(str) {
@@ -101,8 +95,6 @@ const copyIt = async () => {
   alert('Text copied');
 }
 
-
-
 // Pronounce
   const speak = () => {
     let msg = new SpeechSynthesisUtterance();
@@ -110,13 +102,13 @@ const copyIt = async () => {
     window.speechSynthesis.speak(msg);
   }
   // Download Text
-  const download=(filename, text)=>{
-    var element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-    element.setAttribute('download', filename);
-    element.style.display = 'none'; document.body.appendChild(element);
-    element.click(); document.body.removeChild(element);
-  }
+  // const download=(filename, text)=>{
+  //   var element = document.createElement('a');
+  //   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  //   element.setAttribute('download', filename);
+  //   element.style.display = 'none'; document.body.appendChild(element);
+  //   element.click(); document.body.removeChild(element);
+  // }
   
   // Clear
   const handleClearClick = ()=>{
@@ -145,24 +137,24 @@ const copyIt = async () => {
            {/* <label for="mybox" className="form-label">Write Your Text</label> */}
             <textarea className="form-control" value={text} onChange={handleOnChange} id="mybox" rows="10" placeholder='Simply enter your text and choose the case you want to convert it to.'></textarea>
         
-        <button className="btn btn-outline-dark" onClick={handleUpClick}>UPPERCASE</button>
-        <button className="btn btn-outline-dark" onClick={handleLwClick}>lowercase</button>
-        <button className="btn btn-outline-dark " onClick={handleCcClick}>Capitalize</button>
-        <button className="btn btn-outline-dark" onClick={handleScClick}>Sentence case</button>
-        <button className="btn btn-outline-dark " onClick={handleReverse}>Reverse</button> 
-        <button className="btn btn-outline-dark" onClick={handleInverseClick}>iNVERSE</button>         
-        <button className="btn btn-outline-dark" onClick={handleSliceClick}>Convert to 100 letters</button>       
-        <button className="btn btn-outline-dark" onClick={rmvSpecailCharacters}>Remove Special Characters</button> 
-        <button className="btn btn-outline-dark " onClick={handleExtraSpaces }>Remove Extra Spaces</button> 
-        <button className="btn btn-outline-dark " onClick={onRemoveDuplicatesClick }> Remove Duplicate Words </button>             
-        <button className="btn btn-dark " onClick={handleClearClick}><i class="fa-solid fa-trash-can"></i></button>
+        <button className="btn" onClick={handleUpClick}>UPPERCASE</button>
+        <button className="btn" onClick={handleLwClick}>lowercase</button>
+        <button className="btn" onClick={handleCcClick}>Capitalize</button>
+        <button className="btn" onClick={handleScClick}>Sentence case</button>
+        <button className="btn" onClick={handleReverse}>Reverse</button> 
+        <button className="btn" onClick={handleInverseClick}>iNVERSE</button>         
+        <button className="btn" onClick={handleSliceClick}>Convert to 100 letters</button>       
+        <button className="btn" onClick={rmvSpecailCharacters}>Remove Special Characters</button> 
+        <button className="btn" onClick={handleExtraSpaces }>Remove Extra Spaces</button> 
+        <button className="btn" onClick={onRemoveDuplicatesClick }> Remove Duplicate Words </button>             
+        <button className="btn" onClick={handleClearClick}><i class="fa-solid fa-trash-can"></i></button>
         
       </div>
-         <div className="bg-light col-md-6">
+         <div className="col-md-6">
          <textarea className="form-control" value={text} onChange={handleOnChange} id="mybox" rows="10" readOnly></textarea>
          <button className="btn btn-dark" onClick={copyIt}>Copy to Clipboard</button>         
-        <button className="btn btn-dark" onClick={download}>Download txt</button> 
-        <button className="btn btn-warning" type="submit" onClick={speak}>Pronounce</button>
+        {/* <button className="btn btn-dark" onClick={download}>Download txt</button>  */}
+        <button className="btn" type="submit" onClick={speak}>Pronounce</button>
 
         </div>
         </div>
