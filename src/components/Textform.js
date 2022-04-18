@@ -138,12 +138,13 @@ const copyIt = async () => {
   // setText="new text"; // right way to change the state
   return (
    <>
-    <div className="container my-3">
-        <h2>{props.heading}</h2>
-        <div className="mb-3">
+    <div className='container'>
+   <div className='row'>
+   <h2>{props.heading}</h2>
+    <div className="col-md-6">       
            {/* <label for="mybox" className="form-label">Write Your Text</label> */}
-            <textarea className="form-control" value={text} onChange={handleOnChange} id="mybox" rows="8" placeholder='Simply enter your text and choose the case you want to convert it to.'></textarea>
-        </div>
+            <textarea className="form-control" value={text} onChange={handleOnChange} id="mybox" rows="10" placeholder='Simply enter your text and choose the case you want to convert it to.'></textarea>
+        
         <button className="btn btn-outline-dark" onClick={handleUpClick}>UPPERCASE</button>
         <button className="btn btn-outline-dark" onClick={handleLwClick}>lowercase</button>
         <button className="btn btn-outline-dark " onClick={handleCcClick}>Capitalize</button>
@@ -153,13 +154,19 @@ const copyIt = async () => {
         <button className="btn btn-outline-dark" onClick={handleSliceClick}>Convert to 100 letters</button>       
         <button className="btn btn-outline-dark" onClick={rmvSpecailCharacters}>Remove Special Characters</button> 
         <button className="btn btn-outline-dark " onClick={handleExtraSpaces }>Remove Extra Spaces</button> 
-        <button className="btn btn-outline-dark " onClick={onRemoveDuplicatesClick }> Remove Duplicate Words </button> 
-        <button className="btn btn-dark" onClick={copyIt}>Copy to Clipboard</button>         
-        <button className="btn btn-dark" onClick={download}>Download txt</button> 
-        <button className="btn btn-warning" type="submit" onClick={speak}>Pronounce</button>
+        <button className="btn btn-outline-dark " onClick={onRemoveDuplicatesClick }> Remove Duplicate Words </button>             
         <button className="btn btn-dark " onClick={handleClearClick}><i class="fa-solid fa-trash-can"></i></button>
         
       </div>
+         <div className="bg-light col-md-6">
+         <textarea className="form-control" value={text} onChange={handleOnChange} id="mybox" rows="10" readOnly></textarea>
+         <button className="btn btn-dark" onClick={copyIt}>Copy to Clipboard</button>         
+        <button className="btn btn-dark" onClick={download}>Download txt</button> 
+        <button className="btn btn-warning" type="submit" onClick={speak}>Pronounce</button>
+
+        </div>
+        </div>
+        </div>
       <div className="container my-3 bg-light py-4">
         <h2>Your Text Summary</h2>   {/* // counting words and characters */}
         <table className="rtable"> 
@@ -174,10 +181,13 @@ const copyIt = async () => {
           </tr>
         </table>
         </div>
-        <div className="container my-4 bg-light py-4">
-        <h2>Preview</h2>
-        <p>{text.length>0?text:"Enter Something in Textarea above to Preview"}</p>
+
+        <div className='container'>
+        <h2>Preview</h2>      
+          <p>{text.length>0?text:"Enter Something in Textarea above to Preview"}</p>
+
         </div>
+     
 
       
    </>
