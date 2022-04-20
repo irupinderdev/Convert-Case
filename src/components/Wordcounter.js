@@ -13,7 +13,7 @@ const handleOnChange = (event)=>{
 
   return (
    <>
-    <div className='container'>
+    <div className='container my-3'>
    <h2>{props.wcheading}</h2>
     <div className="col-md-12">               
             <textarea className="form-control" value={text} onChange={handleOnChange} id="mybox" rows="10" placeholder='Simply enter your text and choose the case you want to convert it to.'></textarea>

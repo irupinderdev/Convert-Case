@@ -28,17 +28,14 @@ function App () {
   return (
 <>
 <Router>
-<Navbar title="Text Utility Tool" aboutText="Word Counter" serviceText="More Tools" replace="Replace" beautify="Beautify" password="Password Generator"/>
+  <Navbar title="Text Utility Tool"/>
   <Routes>
+  
   <Route path="/" element={<Textform heading="Enter the text to analyze"/>} />
   <Route exact path='/about' element={<About/> } />
   <Route exact path='/wordcounter' element={ <Wordcounter wcheading="Paste Your Text And Get Text Summary"/> } />
   </Routes>
-    
-    
-    {/* About Component */}
- 
-    
+     
     </Router>
 </>
   )
