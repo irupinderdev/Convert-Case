@@ -1,8 +1,9 @@
 import './App.css';
-// import About from './components/About';
+ import About from './components/About';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import Wordcounter from './components/Wordcounter';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 
 function App () {
@@ -26,11 +27,19 @@ function App () {
 
   return (
 <>
-    <Navbar title="Text Utility Tool" aboutText="Word Counter" serviceText="More Tools" replace="Replace" beautify="Beautify" password="Password Generator"/>
-     <Textform heading="Enter the text to analyze"/>
+<Router>
+<Navbar title="Text Utility Tool" aboutText="Word Counter" serviceText="More Tools" replace="Replace" beautify="Beautify" password="Password Generator"/>
+  <Routes>
+  <Route path="/" element={<Textform heading="Enter the text to analyze"/>} />
+  <Route exact path='/about' element={<About/> } />
+  <Route exact path='/wordcounter' element={ <Wordcounter wcheading="Paste Your Text And Get Text Summary"/> } />
+  </Routes>
+    
+    
     {/* About Component */}
-    {/* <About/> */}
-    <Wordcounter wcheading="Paste Your Text And Get Text Summary"/>
+ 
+    
+    </Router>
 </>
   )
 }
