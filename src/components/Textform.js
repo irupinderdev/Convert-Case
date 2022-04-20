@@ -133,7 +133,7 @@ const copyIt = async () => {
     <div className='container'>
    <div className='row'>
    <h2>{props.heading}</h2>
-    <div className="col-md-6">       
+    <div className="col-md-12">       
            {/* <label for="mybox" className="form-label">Write Your Text</label> */}
             <textarea className="form-control" value={text} onChange={handleOnChange} id="mybox" rows="10" placeholder='Simply enter your text and choose the case you want to convert it to.'></textarea>
         
@@ -146,20 +146,20 @@ const copyIt = async () => {
         <button className="btn" onClick={handleSliceClick}>Convert to 100 letters</button>       
         <button className="btn" onClick={rmvSpecailCharacters}>Remove Special Characters</button> 
         <button className="btn" onClick={handleExtraSpaces }>Remove Extra Spaces</button> 
-        <button className="btn" onClick={onRemoveDuplicatesClick }> Remove Duplicate Words </button>             
+        <button className="btn" onClick={onRemoveDuplicatesClick }> Remove Duplicate Words </button>  
+        <button className="btn btn-dark" onClick={copyIt}>Copy to Clipboard</button>         
+        {/* <button className="btn btn-dark" onClick={download}>Download txt</button>  */}
+        <button className="btn" type="submit" onClick={speak}>Pronounce</button>           
         <button className="btn" onClick={handleClearClick}><i class="fa-solid fa-trash-can"></i></button>
         
       </div>
-         <div className="col-md-6">
+         {/* <div className="col-md-6">
          <textarea className="form-control" value={text} onChange={handleOnChange} id="mybox" rows="10" readOnly></textarea>
-         <button className="btn btn-dark" onClick={copyIt}>Copy to Clipboard</button>         
-        {/* <button className="btn btn-dark" onClick={download}>Download txt</button>  */}
-        <button className="btn" type="submit" onClick={speak}>Pronounce</button>
+        </div> */}
 
         </div>
         </div>
-        </div>
-      <div className="container my-3 bg-light py-4">
+      <div className="container" id="text-summary">
         <h2>Your Text Summary</h2>   {/* // counting words and characters */}
         <table className="rtable"> 
           <tr>
@@ -169,12 +169,12 @@ const copyIt = async () => {
              <td> Paragraphs: {text.split(/\r\n|\r|\n/).length}</td>
              <td>{0.008 * text.split(" ").length} Minutes to read</td>
              <td>Sentence count: {text.split(/[.?!]\s/).length}</td>
-             <td>Characters per word(Average): {text.replace(/ /g,"").length/text.split(" ").length}</td>
+             {/* <td>Characters per word(Average): {text.replace(/ /g,"").length/text.split(" ").length}</td> */}
           </tr>
         </table>
         </div>
 
-        <div className='container'>
+        <div className='container' id="preview">
         <h2>Preview</h2>      
           <p>{text.length>0?text:"Enter Something in Textarea above to Preview"}</p>
 

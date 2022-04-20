@@ -27,7 +27,7 @@ export default function Navbar(props) {
             <NavLink className="nav-link" to="/beautify">Beautify</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/">Password Generator</NavLink>
+            <NavLink className="nav-link" to="/passwordgenerator">Password Generator</NavLink>
           </li>
           <li className="nav-item dropdown">
             <NavLink className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

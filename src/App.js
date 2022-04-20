@@ -33,7 +33,7 @@ function App () {
   
   <Route path="/" element={<Textform heading="Enter the text to analyze"/>} />
   <Route exact path='/about' element={<About/> } />
-  <Route exact path='/wordcounter' element={ <Wordcounter wcheading="Paste Your Text And Get Text Summary"/> } />
+  <Route exact path='/wordcounter' element={ <Wordcounter wcheading="Paste Text And Get Text Summary"/> } />
   </Routes>
      
     </Router>
