@@ -169,7 +169,7 @@ const handleExtraSpaces = ()=>{
              <td> {text.split(" ").length-1} - Space Counter </td>
              <td> Paragraphs: {text.split(/\r\n|\r|\n/).filter((element) => {return element.length!==0}).length}</td>
              <td>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minute read </td>
-             <td>Sentence count: {text.split(/[.?!]\s/).length}</td>
+             <td>Sentence count: {text.split(/[.?!]\s/).filter((element)=>{return element.length!==0}).length}</td>
              {/* <td>Characters per word(Average): {text.replace(/ /g,"").length/text.split(" ").length}</td> */}
           </tr>
         </table>
