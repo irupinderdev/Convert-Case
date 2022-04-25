@@ -23,12 +23,12 @@ const handleOnChange = (event)=>{
         <h2>Your Text Summary</h2>   {/* // counting words and characters */}
         <table className="rtable"> 
           <tr>
-            <td><strong>Words :</strong> {text.split(" ").length} </td>  {/*  {text.split('\n').join('').split(/[ ]+/).length} */}
+          <td><strong>Words :</strong> {text.split(" ").filter((element)=>{return element.length!==0}).length} </td>  {/*  {text.split('\n').join('').split(/[ ]+/).length} */}
              <td> <strong>Characters : {text.length} </strong>{}  </td>    {/*  {text.split('\n').join('').split(/[ ]+/).join('').length} */}
              <td> {text.split(" ").length-1} - Space Counter </td>
-             <td> Paragraphs: {text.split(/\r\n|\r|\n/).length}</td>
-             <td>{0.008 * text.split(" ").length} Minutes to read</td>
-             <td>Sentence count: {text.split(/[.?!]\s/).length}</td>
+             <td> Paragraphs: {text.split(/\r\n|\r|\n/).filter((element) => {return element.length!==0}).length}</td>
+             <td>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minute read </td>
+             <td>Sentence count: {text.split(/[.?!]\s/).filter((element)=>{return element.length!==0}).length}</td>
              <td>Characters per word(Average): {text.replace(/ /g,"").length/text.split(" ").length}</td>
           </tr>
         </table>
