@@ -64,10 +64,10 @@ const handleReverse = (event) => {
   setText(newText);
 }
 //Convert to 100 letters
-function handleSliceClick(event) {
-        let newText = text.slice(0, 100);
-        setText(newText);
-    }
+// function handleSliceClick(event) {
+//         let newText = text.slice(0, 100);
+//         setText(newText);
+//     }
 
  // Function to remove duplicate words from the string
 const onRemoveDuplicatesClick = () => {
@@ -131,54 +131,48 @@ const handleExtraSpaces = ()=>{
   // setText="new text"; // right way to change the state
   return (
    <>
-    <div className='container'>
+    <div className='container section-1'>
    <div className='row'>
    <h2>{props.heading}</h2>
     <div className="col-md-12">       
            {/* <label for="mybox" className="form-label">Write Your Text</label> */}
-            <textarea className="form-control" value={text} onChange={handleOnChange} id="mybox" rows="10" placeholder='Simply enter your text and choose the case you want to convert it to.'></textarea>
-        
+           <div className="col-md-12">    <textarea className="form-control" value={text} onChange={handleOnChange} id="mybox" rows="8" placeholder='Simply enter your text and choose the case you want to convert it to.'></textarea>
+        </div>
         <button className="btn" onClick={handleUpClick}>UPPERCASE</button>
         <button className="btn" onClick={handleLwClick}>lowercase</button>
         <button className="btn" onClick={handleCcClick}>Capitalize</button>
         <button className="btn" onClick={handleScClick}>Sentence case</button>
         <button className="btn" onClick={handleReverse}>Reverse</button> 
         <button className="btn" onClick={handleInverseClick}>iNVERSE</button>         
-        <button className="btn" onClick={handleSliceClick}>Convert to 100 letters</button>       
+        {/* <button className="btn" onClick={handleSliceClick}>Convert to 100 letters</button>        */}
         <button className="btn" onClick={rmvSpecailCharacters}>Remove Special Characters</button> 
         <button className="btn" onClick={handleExtraSpaces }>Remove Extra Spaces</button> 
         <button className="btn" onClick={onRemoveDuplicatesClick }> Remove Duplicate Words </button>  
+        <button className="btn" type="submit" onClick={speak}>Pronounce</button>  
         <button className="btn btn-dark" onClick={copyIt}>Copy to Clipboard</button>         
         {/* <button className="btn btn-dark" onClick={download}>Download txt</button>  */}
-        <button className="btn" type="submit" onClick={speak}>Pronounce</button>           
+                
         <button className="btn" onClick={handleClearClick}><i class="fa-solid fa-trash-can"></i></button>
         
       </div>
+      <div className='my-3'>
+      Words : <strong> {text.split(" ").filter((element)=>{return element.length!==0}).length} </strong> | Characters :    <strong>{text.length}{}  </strong> |  Space Counter -  <strong>{text.split(" ").length-1} </strong> | Sentences:  <strong>{text.split(/[.?!]\s/).filter((element)=>{return element.length!==0}).length}  </strong> | Paragraphs:  <strong>{text.split(/\r\n|\r|\n/).filter((element) => {return element.length!==0}).length} </strong> |  Time to Read: <strong> {0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} </strong> | Characters per word(Average):  <strong>{text.replace(/ /g,"").length/text.split(" ").length}</strong>
+      </div>
+
+
          {/* <div className="col-md-6">
          <textarea className="form-control" value={text} onChange={handleOnChange} id="mybox" rows="10" readOnly></textarea>
         </div> */}
 
         </div>
         </div>
-      <div className="container" id="text-summary">
-        <h2>Your Text Summary</h2>   {/* // counting words and characters */}
-        <table className="rtable"> 
-          <tr>
-            <td><strong>Words :</strong> {text.split(" ").filter((element)=>{return element.length!==0}).length} </td>  {/*  {text.split('\n').join('').split(/[ ]+/).length} */}
-             <td> <strong>Characters : {text.length} </strong>{}  </td>    {/*  {text.split('\n').join('').split(/[ ]+/).join('').length} */}
-             <td> {text.split(" ").length-1} - Space Counter </td>
-             <td> Paragraphs: {text.split(/\r\n|\r|\n/).filter((element) => {return element.length!==0}).length}</td>
-             <td>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minute read </td>
-             <td>Sentence count: {text.split(/[.?!]\s/).filter((element)=>{return element.length!==0}).length}</td>
-             {/* <td>Characters per word(Average): {text.replace(/ /g,"").length/text.split(" ").length}</td> */}
-          </tr>
-        </table>
-        </div>
-
-        <div className='container' id="preview">
-        <h2>Preview</h2>      
+        
+        <div className='container section-1'>
+        <h2>Preview</h2>  
+        <div id="preview">
           <p>{text.length>0?text:"Enter Something in Textarea above to Preview"}</p>
 
+        </div>
         </div>
      
 

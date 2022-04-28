@@ -16,7 +16,7 @@ const handleOnChange = (event)=>{
     <div className='container my-3'>
    <h2>{props.wcheading}</h2>
     <div className="col-md-12">               
-            <textarea className="form-control" value={text} onChange={handleOnChange} id="mybox" rows="10" placeholder='Simply enter your text and choose the case you want to convert it to.'></textarea>
+            <textarea className="form-control" value={text} onChange={handleOnChange} id="mybox" rows="7" placeholder='Simply enter your text and choose the case you want to convert it to.'></textarea>
         </div>
         </div>
       <div className="container my-3 bg-light py-4">
