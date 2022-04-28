@@ -19,6 +19,9 @@ export default function Navbar(props) {
             <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
           </li>
           <li className="nav-item">
+            <NavLink className="nav-link" to="/">Convert Case</NavLink>
+          </li>
+          <li className="nav-item">
             <NavLink className="nav-link" to="/wordcounter">Word Counter</NavLink>
           </li>
           <li className="nav-item">

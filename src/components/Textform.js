@@ -156,7 +156,7 @@ const handleExtraSpaces = ()=>{
         
       </div>
       <div className='my-3'>
-      Words : <strong> {text.split(" ").filter((element)=>{return element.length!==0}).length} </strong> | Characters :    <strong>{text.length}{}  </strong> |  Space Counter -  <strong>{text.split(" ").length-1} </strong> | Sentences:  <strong>{text.split(/[.?!]\s/).filter((element)=>{return element.length!==0}).length}  </strong> | Paragraphs:  <strong>{text.split(/\r\n|\r|\n/).filter((element) => {return element.length!==0}).length} </strong> |  Time to Read: <strong> {0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} </strong> | Characters per word(Average):  <strong>{text.replace(/ /g,"").length/text.split(" ").length}</strong>
+      Words : <strong> {text.split(" ").filter((element)=>{return element.length!==0}).length} </strong> |&nbsp; Characters :    <strong>{text.length}{}  </strong> | &nbsp; Space Counter -  <strong>{text.split(" ").length-1} </strong> | &nbsp;Sentences:  <strong>{text.split(/[.?!]\s/).filter((element)=>{return element.length!==0}).length}  </strong> | &nbsp;Paragraphs:  <strong>{text.split(/\r\n|\r|\n/).filter((element) => {return element.length!==0}).length} </strong> |  &nbsp; Time to Read: <strong> {0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} </strong> | &nbsp; Characters per word(Average):  <strong>{text.replace(/ /g,"").length/text.split(" ").length}</strong>
       </div>
 
 
