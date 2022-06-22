@@ -1,6 +1,14 @@
 import React, {useState} from 'react' 
 
 export default function Textform(props) {
+
+  const [text, setText] = useState('');
+  // text="new text"; // wrong way
+  // setText="new text"; // right way to change the state
+
+  // state for copy to clipboard
+const [copied, setCopied] = useState("Copy to Clipboard")
+
   // UPPERCASE
   const handleUpClick = ()=>{
     console.log("Upppercase was clicked" + text);
@@ -90,11 +98,23 @@ const handleExtraSpaces = ()=>{
   }
 
    // Copy to Clipboard
-   const copyIt = async () => {
-    await navigator.clipboard.writeText(text);
-    alert('Text copied');
-  
-}
+//    const copyIt = async () => {
+//     await navigator.clipboard.writeText(text);
+//     alert('Text copied');
+// }
+  const copyIt = async () => {
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied("Copied Succesfully");
+      // change back to initial state after 1 second
+      setTimeout(() => {
+        setCopied("Copy to Clipboard");
+      }, 1500);
+    }, (err) => {
+      console.log(`Failed to Copy {err.message}`)
+    }
+    )
+  }
+
 
 // Pronounce
   const speak = () => {
@@ -126,9 +146,7 @@ const handleExtraSpaces = ()=>{
     setText(event.target.value);
   }
 
-  const [text, setText] = useState('');
-  // text="new text"; // wrong way
-  // setText="new text"; // right way to change the state
+
   return (
    <>
     <div className='container section-1'>
@@ -149,7 +167,7 @@ const handleExtraSpaces = ()=>{
         <button className="btn" onClick={handleExtraSpaces }>Remove Extra Spaces</button> 
         <button className="btn" onClick={onRemoveDuplicatesClick }> Remove Duplicate Words </button>  
         <button className="btn" type="submit" onClick={speak}>Pronounce</button>  
-        <button className="btn btn-dark" onClick={copyIt}>Copy to Clipboard</button>         
+        <button className="btn btn-dark" onClick={copyIt}>{copied}</button>         
         {/* <button className="btn btn-dark" onClick={download}>Download txt</button>  */}
                 
         <button className="btn" onClick={handleClearClick}><i class="fa-solid fa-trash-can"></i></button>
