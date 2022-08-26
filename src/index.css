@@ -1,9 +1,10 @@
 :root {
   /* Color Variables: */
 --light:#fff;
---secondarycolor:#D2E6E7;
---dark:#262626;
+--secondarycolor:#fbf8f3;
+--dark:#232323;
 --warning: #ffbb33;
+--shadow:rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 /* Font Variables */
  --primaryfont:'Work Sans', sans-serif;
 }
@@ -14,6 +15,7 @@ body {
   font-family: var(--primaryfont);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1032%26quot%3b)' fill='none'%3e%3crect width='1920' height='1080' x='0' y='0' fill='rgba(175%2c 201%2c 220%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c714.932C132.082%2c680.324%2c153.336%2c491.103%2c266.776%2c415.111C376.615%2c341.531%2c554.629%2c395.087%2c634.61%2c289.817C713.698%2c185.722%2c692.159%2c30.934%2c653.555%2c-93.967C617.666%2c-210.083%2c512.902%2c-283.733%2c429.901%2c-372.512C350.354%2c-457.596%2c286.694%2c-563.761%2c177.199%2c-603.483C64.915%2c-644.216%2c-59.577%2c-626.816%2c-173.672%2c-591.471C-286.615%2c-556.483%2c-386.041%2c-490.872%2c-466.372%2c-404.113C-548.643%2c-315.259%2c-637.403%2c-212.616%2c-636.578%2c-91.526C-635.769%2c27.296%2c-505.158%2c100.29%2c-462.181%2c211.071C-415.142%2c332.322%2c-462.726%2c487.377%2c-374.812%2c583.219C-283.445%2c682.826%2c-130.751%2c749.191%2c0%2c714.932' fill='%2380aac8'%3e%3c/path%3e%3cpath d='M1920 1752.366C2045.093 1733.7060000000001 2156.918 1682.008 2267.876 1621.306 2386.923 1556.179 2510.835 1496.229 2589.851 1385.911 2678.93 1261.544 2768.508 1112.402 2740.042 962.096 2711.685 812.3679999999999 2561.188 723.89 2445.654 624.519 2345.298 538.202 2238.499 464.807 2112.984 422.75800000000004 1983.619 379.419 1850.287 368.294 1714.318 379.51199999999994 1550.228 393.04999999999995 1334.4679999999998 356.72299999999996 1244.222 494.43499999999995 1150.444 637.5360000000001 1291.346 822.879 1312.509 992.656 1327.229 1110.746 1320.8200000000002 1225.005 1349.681 1340.4560000000001 1384.554 1479.959 1381.783 1651.9009999999998 1498.354 1736.094 1614.7350000000001 1820.149 1778.01 1773.546 1920 1752.366' fill='%23dee9f0'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1032'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");background-repeat: no-repeat;background-size: cover;background-position: center;
 }
 ::selection{background:var(--dark);color:var(--light);}
 
@@ -28,19 +30,19 @@ h2{font-size: 2rem;}
 .navbar-light .navbar-toggler{border-color:transparent;}
 .navbar-toggler:focus{box-shadow: none;}
 .navbar-brand{font-size: 1.5rem;}
-.navbar-light .navbar-nav .nav-link {color: var(--dark);letter-spacing: 1px;text-transform: uppercase;margin: 0 .5rem;}
-.btn{margin:0.5rem .5rem .1rem 0;padding: .2rem .5rem;border: 1px solid #999;background:var(--light);
+.navbar-light .navbar-nav .nav-link {color: var(--dark);letter-spacing: 1px;margin: 0 .7rem;font-weight:600;}
+.btn{margin:0.5rem .5rem .1rem 0;padding: .5rem 1rem;background:var(--light);
   color:var(--dark);font-size: 14px;}
-  .btn:focus{box-shadow: none;border-color: var(--dark);}
+  .btn:focus{box-shadow: none}
 .btn-dark{color:#fff;background-color: var(--dark);}
 .rtable td{padding: 0.8rem;border:1px solid var(--dark);margin: 0.5rem .5rem .5rem 0; display: inline-block;}
-.section-1{background:var(--secondarycolor);margin: 2rem auto;padding: 2rem;}
-
+.section-1{box-shadow: var(--shadow);margin: 2rem auto;padding: 2rem;width:80%;border-radius: 2rem;}
+.form-control{background: #f2f4f6;border-radius: 10px;}
 .container
-#preview {border:1px solid #fff;background: var(--light); padding:1rem 1rem 10rem;;}
+#preview {padding:1rem 1rem 10rem;;}
 
-.form-control:focus{border-color:#fff;box-shadow: none;}
-
+.form-control:focus{border-color:#fff;box-shadow: none;background: #f2f4f6;}
+.buttons-container{text-align: center;}
 
 @media screen and (max-width: 600px) {
   .section-1 {  padding: 2rem .8rem;margin: 0 0 1rem;}

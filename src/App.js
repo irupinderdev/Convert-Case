@@ -1,44 +1,29 @@
 import './App.css';
- import About from './components/About';
-import Navbar from './components/Navbar';
-import Textform from './components/Textform';
-import Wordcounter from './components/Wordcounter';
+
+import {Navbar} from './components/navbar';
+import {Textform} from './components/textarea';
+import {Wordcounter} from './components/wordcounter';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Footer } from './components/footer';
 
 
-function App () {
-  //  const [mode, setMode] = useState('light'); // Whether Dark Mode is enabled or not
-
-  //       const toggleMode = () => {
-  //         if (mode === 'light') {
-  //             setMode('dark');
-  //         }
-  //         else {
-  //             setMode('light');
-  //         }
-   //   };
-//    const [alert, setAlert] = useState(null)
-//    const showAlert = (message, type) => {
-//     setAlert({
-//         msg: message,
-//         Type: type
-//     })
-// }
+export const App =()=> {
 
   return (
 <>
 <Router>
-  <Navbar title="Text Utility Tool"/>
+        <Navbar title="Online Converter Tool" />
+        <div className='main-container'>
   <Routes>
-  
   <Route path="/" element={<Textform heading="Enter the text to analyze"/>} />
-  <Route exact path='/about' element={<About/> } />
-  <Route exact path='/wordcounter' element={ <Wordcounter wcheading="Paste Text And Get Text Summary"/> } />
-  </Routes>
-     
+  <Route exact path='/' element={ <Wordcounter wcheading="Paste Text And Get Text Summary"/> } />
+          </Routes>
+          
+
+        </div>
+        <Footer/>
     </Router>
 </>
   )
 }
 
-export default App;
