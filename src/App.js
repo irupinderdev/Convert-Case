@@ -15,7 +15,7 @@ export const App =()=> {
         <Navbar title="Online Converter Tool" />
         <div className='main-container'>
   <Routes>
-  <Route path="/" element={<Textform heading="Enter the text to analyze"/>} />
+  <Route path="/" element={<Textform heading="Enter the text"/>} />
   <Route exact path='/' element={ <Wordcounter wcheading="Paste Text And Get Text Summary"/> } />
           </Routes>
           
